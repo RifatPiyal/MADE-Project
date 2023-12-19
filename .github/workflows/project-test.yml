@@ -23,13 +23,6 @@ jobs:
         with:
             python-version: 3.11
 
-      - run: cd project/Config    
-      - name: setup-kaggle-credentials
-        uses: jsdaniell/create-json@v1.2.2
-        with:
-            name: "kaggle.json"  
-            json: ${{ secrets.KAGGLE_CREDENTIALS }} 
-
       - name: Install requirements
         run: |
           pip install -r requirements.txt
