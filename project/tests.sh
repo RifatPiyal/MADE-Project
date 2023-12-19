@@ -1,6 +1,6 @@
 #!/bin/bash
 
 #!/bin/bash
-pytest test_pipe.py -rA
+pytest project/test_pipe.py -rA --disable-pytest-warnings
 
 
