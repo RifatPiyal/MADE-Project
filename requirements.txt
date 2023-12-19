@@ -14,7 +14,7 @@ cycler==0.12.1
 debugpy==1.8.0
 decorator==5.1.1
 dm-tree==0.1.8
-etl-pipeline-runner==1.1.0
+#etl-pipeline-runner==1.1.0
 executing==2.0.1
 flatbuffers==23.5.26
 fonttools==4.46.0

@@ -1,12 +1,15 @@
 import unittest
 import os
 import sqlite3
+import warnings
 from Config.basepipeline import ETLPipeline, DataSource, CSVFile, SQLiteDB
+
+warnings.filterwarnings('ignore')
 
 class TestDatasetProcessing(unittest.TestCase):
     def setUp(self):
         # You can modify this path based on your project structure
-        self.base_path = r'C:\Users\Piyal\Documents\GitHub\MADE-Project\Project'
+        self.base_path = os.path.dirname(os.path.abspath(__file__))
 
     def test_bike_pipeline(self):
         # Bike Sharing Data Pipeline Test

@@ -1,12 +1,15 @@
 name: Project tests
 on: 
-    pull_request:
-        types:
-            - opened
-            - edited
-            - synchronize
-        branches:
-            - main
+  push:
+    paths:
+      - 'project/**'
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+    branches:
+      - main
 
 jobs:
   Project-tests:
@@ -20,6 +23,7 @@ jobs:
         with:
             python-version: 3.11
 
+      - run: cd project/Config    
       - name: setup-kaggle-credentials
         uses: jsdaniell/create-json@v1.2.2
         with:
@@ -32,6 +36,7 @@ jobs:
           
       - name: Run tests
         run: |
-          chmod +x ./project/tests.sh
-          ./project/tests.sh
+          cd ..
+          chmod +x tests.sh
+          ./tests.sh
         
