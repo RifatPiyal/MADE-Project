@@ -19,7 +19,7 @@ Urban Planners in London: The insights garnered from this project can serve as a
 
 Datasource1: London bike sharing dataset
 
-Metadata URL: https://www.kaggle.com/datasets/hmavrodiev/london-bike-sharing-dataset/
+Metadata URL: [https://www.kaggle.com/datasets/hmavrodiev/london-bike-sharing-dataset/]
 
 Sample Data URL:(https://cycling.data.tfl.gov.uk/)
 Data Type: CSV
