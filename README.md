@@ -26,7 +26,7 @@ project/
 
 - `project/etl_pipeline.py`: It will run an automated ETL pipeline that creates an SQLite database named `main.sqlite` that contains two tables representing two open data sources of the project.
 - `project/tests.sh`: A bash script that will execute the component and system-level testing for the project by calling two other Python scripts, `project/test_pipe.py`.
-- `project/report.ipynb`: This Jupyter notebook serves as the final report for the project, providing a comprehensive exploration of all aspects and findings. The report primarily investigates the impact of weather conditions in London on bicycle traffic throughout the year, addressing various key questions, based on the data in `main.sqlite`. See the [report](project/report.ipynb).
+- `project/report.ipynb`: This Jupyter notebook serves as the final report for the project, providing a comprehensive exploration of all aspects and findings. The report primarily investigates the impact of weather conditions in London on bicycle traffic throughout the year, addressing various key questions, based on the data in `main.sqlite`. See the [report](project/report.ipynb) and [slides](project/slides.pdf).
 
 **Project Pipeline using GitHub Action:** <br>
 
