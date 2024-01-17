@@ -41,7 +41,6 @@ Investigate for interesting dataset. #1
 Write initial Description about the project plan. #2
 Construct ETL Pipeline. #3
 Create test cases for ETL Pipeline. #4
+Project Tests Pipeline for the Project #5
+Final Report and Presentation Submission #6
 
-
-
-[i1]: https://github.com/jvalue/made-template/issues/1

@@ -1,8 +1,10 @@
-> _This repository contains data engineering and data science projects and exercises using open data sources as part of the [SAKI](https://oss.cs.fau.de/teaching/specific/saki/) course, taught by the [FAU Chair for Open-Source Software (OSS)](https://oss.cs.fau.de/) in the Winter'23/24 semester. This repo is forked from [2023-amse-template repository](https://github.com/jvalue/2023-amse-template)._
+> _This repository contains data engineering and data science projects and exercises using open data sources as part of the [AMSE](https://oss.cs.fau.de/teaching/specific/amse/)/[SAKI](https://oss.cs.fau.de/teaching/specific/saki/) course, taught by the [FAU Chair for Open-Source Software (OSS)](https://oss.cs.fau.de/) in the Winter'23/24 semester. This repo is forked from [2023-amse-template repository](https://github.com/jvalue/2023-amse-template)._
+
+![bicycle-riding](img/bicycle_riding.jpg)
 
 # Exploring the Impact of Weather and Climate on Bicycle sharing in London
 
-This project aims to analyze **the Impact of Weather and Climate on Bicycle sharing in London** generated from several data collectors throughout the city to determine if London is a suitable city for an enthusiastic cyclist to live in. The project is using two open data sources: [Bicycle sharing Data in London](https://www.kaggle.com/datasets/hmavrodiev/london-bike-sharing-dataset), which contains information on bicycle traffic in London, and [Weather and Climate Data of London](https://www.kaggle.com/datasets/emmanuelfwerr/london-weather-data), which provides weather and climate data of London. For details see the [project plan](/project/project-plan.md).
+This project aims to analyze **the Impact of Weather and Climate on Bicycle sharing in London** generated from several data collectors throughout the city to determine if London is a suitable city for an enthusiastic cyclist to live in. The project is using two open data sources: [Bicycle sharing Data in London](https://www.kaggle.com/datasets/hmavrodiev/london-bike-sharing-dataset), which contains information on bicycle traffic in London, and [Weather and Climate Data of London]https://www.kaggle.com/datasets/emmanuelfwerr/london-weather-data), which provides weather and climate data of London. For details see the [project plan](/project/project-plan.md).
 
 ## Project Structure
 
