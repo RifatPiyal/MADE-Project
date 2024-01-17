@@ -1,4 +1,4 @@
-> _This repository contains data engineering and data science projects and exercises using open data sources as part of the [SAKI](https://oss.cs.fau.de/teaching/specific/saki/) course, taught by the [FAU Chair for Open-Source Software (OSS)](https://oss.cs.fau.de/) in the Winter'23/24 semester. This repo is forked from [2023-amse-template repository](https://github.com/jvalue/2023-amse-template)._
+> _This repository contains data engineering and data science projects and exercises using open data sources as part of the [SAKI](https://oss.cs.fau.de/teaching/specific/saki/) course, taught by the [FAU Chair for Open-Source Software (OSS)](https://oss.cs.fau.de/) in the Winter'23/24 semester. This repo is forked from [2023-amse-template repository](https://github.com/jvalue/made-template.git)
 
 # Exploring the Impact of Weather and Climate on Bicycle sharing in London
 
