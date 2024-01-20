@@ -1,0 +1,92 @@
+  // Transformation definition to convert Celsius to Fahrenheit
+  transform TempConvert {
+    from tempCelsius oftype decimal;
+    to tempFahrenheit oftype decimal;
+
+    // Conversion formula
+    tempFahrenheit: (tempCelsius * 9/5) + 32;
+  }
+
+
+pipeline WeatherPipeline {
+  // Extracts weather data from a specified URL
+  block WeatherExtractor oftype HttpExtractor {
+    url: "https://www.mowesta.com/data/measure/mowesta-dataset-20221107.zip";
+  }
+
+  // Interprets the downloaded file as a ZIP archive
+  block ZipInterpreter oftype ArchiveInterpreter {
+    archiveType: "zip";
+  }
+
+  // Picks a specific file from the extracted contents
+  block WeatherFilePicker oftype FilePicker {
+    path: "/data.csv";
+  }
+
+  // Interprets the chosen file as a CSV file
+  block WeatherCSVInterpreter oftype CSVInterpreter {
+    delimiter: ';';
+  }
+
+  // Interprets the chosen file as a plain text file
+  block TextInterpreter oftype TextFileInterpreter {}
+
+  // Deletes specified columns from the data
+  block ColDeleter oftype ColumnDeleter {
+    delete: [column F, column G, column H, column I];
+  }
+
+  // Selects a range of cells from the data
+  block ColDataSelector oftype CellRangeSelector {
+    select: range A1:K*;
+  }
+
+  // Interprets the selected data as a table without headers
+  block WeatherTableInterpreter oftype TableInterpreter {
+    header: false;
+    columns: [
+      "Geraet" oftype integer,
+      "Hersteller" oftype text,
+      "Model" oftype text,
+      "Monat" oftype integer,
+      "Temperatur" oftype decimal,
+      "Batterietemperatur" oftype decimal,
+      "Geraet aktiv" oftype text,
+    ];
+  }
+
+  // Applies the temperature conversion transformation to the 'Temperatur' column
+  block TransformerA oftype TableTransformer {
+    inputColumns: ['Temperatur'];
+    outputColumn: 'Temperatur';
+    use: TempConvert;  // Using the defined transformation
+  }
+
+  // Applies the temperature conversion transformation to the 'Batterietemperatur' column
+  block TransformerB oftype TableTransformer {
+    inputColumns: ['Batterietemperatur'];
+    outputColumn: 'Batterietemperatur';
+    use: TempConvert;  // Using the defined transformation
+  }
+
+  // Loads the processed data into an SQLite table
+  block WeatherLoader oftype SQLiteLoader {
+    table: "temperatures";
+    file: "./temperatures.sqlite";
+    dropTable: false;
+  }
+
+  // Pipeline execution order
+  WeatherExtractor
+  -> ZipInterpreter
+  -> WeatherFilePicker
+  -> TextInterpreter
+  -> WeatherCSVInterpreter
+  -> ColDataSelector
+  -> ColDeleter
+  -> WeatherTableInterpreter
+  -> TransformerA
+  -> TransformerB
+  -> WeatherLoader;
+}
